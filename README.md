@@ -36,7 +36,7 @@
 #### cloning the project:
 * open terminal and navigate to the location where the project need to be clone, then type
 ```
- git clone https://github.com/psuryateja123/davis_test.git
+ https://github.com/psuryateja123/Api_ui_sample_tests_java.git
 ```
 
 #### Running the test:
