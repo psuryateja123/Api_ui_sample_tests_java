@@ -2,3 +2,4 @@
 target/
 test-html-report/
 Api_ui_sample_tests_java.iml
+/.DS_Store
