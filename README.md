@@ -15,7 +15,7 @@
 #### [Feature files](src/test/java/resource/feature_files)
 * In this folder, there are two feature files.
 * [API Test](src/test/java/resource/feature_files/api_tests.feature): This feature file has all the scenarios api automation.
-* [UI Test](src/test/java/resource/feature_files/ui_test.feature).feature: This feature file has all the scenarios, UI tests.
+* [UI Test](src/test/java/resource/feature_files/ui_test.feature): This feature file has all the scenarios, UI tests.
 
 #### [Page objects](src/test/java/resource/page_objects)
 * It has a class, 
@@ -24,7 +24,7 @@
 #### [Step definitions](src/test/java/resource/step_defs)
 * It has two step definition files
 * [API stepsDefs](src/test/java/resource/step_defs/api_automationStepDefs.java) is related to [API Test](src/test/java/resource/feature_files/api_tests.feature).
-* [UI stepDefs](src/test/java/resource/step_defs/ui_testStepDefs.java)is related to [UI Test](src/test/java/resource/feature_files/ui_test.feature)
+* [UI stepDefs](src/test/java/resource/step_defs/ui_testStepDefs.java) is related to [UI Test](src/test/java/resource/feature_files/ui_test.feature)
 
 #### [Utils](src/test/java/resource/utils): 
 * In this folder there are two class, they are the supporting class for the project.
