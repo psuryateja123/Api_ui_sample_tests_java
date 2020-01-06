@@ -10,7 +10,7 @@
 * [Page objects](src/test/java/resource/page_objects)
 * [Step definitions](src/test/java/resource/step_defs)
 * [Utils](src/test/java/resource/utils)
-* [Locators](src/test/java/resource/utils)
+* [Locators](src/test/java/resource/locators)
 
 #### [Feature files](src/test/java/resource/feature_files)
 * In this folder, there are two feature files.
@@ -30,7 +30,10 @@
 * In this folder there are two class, they are the supporting class for the project.
 * [Env.java](src/test/java/resource/utils/Env.java) has url and the name of the browser, further configurations browserstack configurations can be added.
 * [RunTest.java](src/test/java/resource/utils/RunTest.java) has browser driver configurations, cucumber options - location of feature files, location of steps definition files. In this class further browserstack configuration can be added.
-* [Locators.java](src/test/java/resource/utils/locators.java) has locators and will be used in [ui_test_pageobject.java](src/test/java/resource/utils/ui_test_pageobject.java)
+
+#### [Locators](src/test/java/resource/locators)
+* In this folder there is a class - [ui_homepage_locators](src/test/java/resource/locators/ui_homepage_locators)
+* [Locators.java](src/test/java/resource/locators/ui_homepage_locators) has locators and will be used in [ui_test_pageobject.java](src/test/java/resource/utils/ui_test_pageobject.java)
 
 
 #### cloning the project:
