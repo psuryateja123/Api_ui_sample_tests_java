@@ -27,12 +27,6 @@ public class ui_testStepDefs {
         ui_test_pageobject.clicking_remove_checkbox();
     }
 
-    @Then("^the checkbox should disappear$")
-    public void theCheckboxShouldDisappear() {
-        ui_test_pageobject.check_for_checkbox();
-        ui_test_pageobject.check_for_remove_message();
-    }
-
     @And("^I click add button$")
     public void iClickAddButton() {
         ui_test_pageobject.clicking_add();
@@ -50,13 +44,6 @@ public class ui_testStepDefs {
         ui_test_pageobject.click_enable_button();
     }
 
-
-    @And("^I check the status$")
-    public void iCheckTheStatus() {
-        ui_test_pageobject.check_disable_button_state();
-    }
-
-
     @And("^I check the current status$")
     public void iCheckTheCurrentStatus() {
         ui_test_pageobject.check_enable_button_state();
@@ -65,5 +52,41 @@ public class ui_testStepDefs {
     @Then("^I check the default button status$")
     public void iCheckTheDefaultButtonStatus() {
         ui_test_pageobject.check_enable_default_button_state();
+    }
+
+    @Then("^I click on disable button$")
+    public void iClickOnDisableButton() {
+        ui_test_pageobject.click_enable_button();
+        //*[@id="input-example"]/button
+    }
+
+    @Then("^I check the status of the button Add$")
+    public void iCheckTheStatusOfTheButtonAdd() {
+        ui_test_pageobject.check_add_button_State();
+    }
+
+    @And("^I check the add message$")
+    public void iCheckTheAddMessage() {
+        ui_test_pageobject.check_for_added_message();
+    }
+
+    @Then("^I check the remove message$")
+    public void iCheckTheRemoveMessage() {
+        ui_test_pageobject.check_for_remove_message();
+    }
+
+    @Then("^I check the enable state message$")
+    public void iCheckTheEnableStateMessage() {
+        ui_test_pageobject.check_for_enable_state_message();
+    }
+
+    @Then("^I check the remove button status$")
+    public void iCheckTheRemoveButtonStatus() {
+        ui_test_pageobject.check_remove_button_State();
+    }
+
+    @And("^I check the disable state message$")
+    public void iCheckTheDisableStateMessage() {
+        ui_test_pageobject.check_for_disable_state_message();
     }
 }

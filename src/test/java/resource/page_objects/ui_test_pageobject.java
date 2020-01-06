@@ -1,19 +1,21 @@
 package resource.page_objects;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import resource.utils.Env;
 import resource.utils.locators;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 import static resource.utils.RunTest.driver;
 
 
 public class ui_test_pageobject {
+    static WebDriverWait wait;
 
     public static WebDriver driver = new ChromeDriver();
 
@@ -44,6 +46,7 @@ public class ui_test_pageobject {
 
 
     public static void clicking_remove_checkbox()  {
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         WebElement element = driver.findElement(By.xpath(locators.remove_button));
         element.click();
     }
@@ -56,45 +59,37 @@ public class ui_test_pageobject {
 
 
     public static void clicking_add(){
-        WebElement element = driver.findElement(By.xpath(locators.remove_button));
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebElement element =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locators.add_button)));
         element.click();
     }
 
     public static void check_for_added_message(){
-        WebElement element = driver.findElement(By.id(locators.added_message));
-        element.isDisplayed();
-
+        WebElement element = driver.findElement(By.id(locators.message));
+        Assert.assertEquals(locators.added_message, element.getText());
     }
 
     public static void check_for_remove_message(){
         WebElement element = driver.findElement(By.id(locators.message));
-        String text = element.getText();
-        System.out.println(text);
-        Assert.assertFalse(text.equals(locators.remove_message));
+        Assert.assertEquals(locators.remove_message, element.getText() );
 
     }
 
     public static void click_enable_button(){
-        WebElement element = driver.findElement(By.xpath(locators.enable_button));
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebElement element =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locators.enable_button)));
         element.click();
-    }
-
-    public static void check_disable_button_state(){
-        WebElement element = driver.findElement(By.xpath(locators.enable_button));
-        String text = element.getText();
-        System.out.println(text);
-        Assert.assertEquals(text, "Enable");
-        element.isDisplayed();
-
+//        WebElement element = driver.findElement(By.xpath(locators.enable_button));
+//        element.click();
     }
 
     public static void check_enable_button_state(){
         WebElement element = driver.findElement(By.xpath(locators.enable_button));
         String text = element.getText();
         String attr = element.getTagName();
-        System.out.println("text"+text);
-        System.out.println("attr"+attr);
-        Assert.assertEquals(text, "Enable");
+//        System.out.println("text"+text);
+//        System.out.println("attr"+attr);
+        Assert.assertEquals(text, "Disable");
         element.isDisplayed();
 
     }
@@ -106,4 +101,32 @@ public class ui_test_pageobject {
         element.isDisplayed();
 
     }
+
+    public static void check_remove_button_State(){
+        WebElement element = driver.findElement(By.xpath(locators.remove_button));
+        String element_text = element.getText();
+        System.out.println(element_text);
+        Assert.assertEquals(element_text, "Add");
+    }
+
+    public static void check_add_button_State(){
+        WebElement element = driver.findElement(By.xpath(locators.remove_button));
+        String element_text = element.getText();
+        Assert.assertEquals(element_text, "Remove");
+    }
+
+    public static void check_for_enable_state_message(){
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebElement element =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locators.enable_button)));
+        WebElement message = driver.findElement(By.id(locators.message));
+        Assert.assertEquals(message.getText(), locators.enabled_text_message);
+    }
+
+    public static void check_for_disable_state_message(){
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebElement element =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locators.enable_button)));
+        WebElement message = driver.findElement(By.id(locators.message));
+        Assert.assertEquals(message.getText(), locators.disabled_text_message);
+    }
+
 }
