@@ -47,7 +47,7 @@
  mvn clean test -Dcucumber.options="src/test/java/resource/feature_files --tags @ui_test"
 ```
 
-* As I have configured the tags as ui_test for running all the tests related to UI and api_test for running all the tests related to API in the corresponding feature file. 
+* As I have configured the tags as ui_test for running all the tests related to UI and @api_test for running all the tests related to API in the corresponding feature file. 
 
 #### Viewing results:
 
